@@ -1,9 +1,13 @@
-﻿using MVVMProject.ViewModels.Base;
+﻿using MVVMProject.Services.Interfaces;
+using MVVMProject.ViewModels.Base;
 
 namespace MVVMProject.ViewModels
 {
     internal class MainWindowViewModel : ViewModel
     {
+        private readonly IUserDialog _UserDialog;
+        private readonly IDataService _DataService;
+
         #region Title : string - Заголовок окна
 
         /// <summary>Заголовок окна</summary>
@@ -32,9 +36,10 @@ namespace MVVMProject.ViewModels
 
         #endregion
 
-        public MainWindowViewModel()
+        public MainWindowViewModel(IUserDialog UserDialog, IDataService DataService)
         {
-
+            _UserDialog = UserDialog;
+            _DataService = DataService;
         }
     }
 }
