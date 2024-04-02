@@ -4,6 +4,12 @@
              xmlns:local="clr-namespace:MVVMProject"
              StartupUri="Views/Windows/MainWindow.xaml">
     <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Infrastructure/Commands/Commands.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+
+        </ResourceDictionary>
          
     </Application.Resources>
 </Application>

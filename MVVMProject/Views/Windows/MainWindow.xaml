@@ -10,11 +10,11 @@
         <Menu DockPanel.Dock="Top" IsMainMenu="True">
             <Menu.ItemsPanel>
                <ItemsPanelTemplate>
-                   <DockPanel LastChildFill="True"/>
+                   <DockPanel LastChildFill="False"/>
                </ItemsPanelTemplate>
             </Menu.ItemsPanel>
             <MenuItem Header="Файл">
-                <MenuItem Header="Выход"/>
+                <MenuItem Header="Выход" Command="{StaticResource CloseWindowCommand}"/>
             </MenuItem>
         </Menu>
         <StatusBar DockPanel.Dock="Bottom">
