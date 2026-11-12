@@ -5,19 +5,19 @@ namespace MVVMProject.ViewModels
 {
     internal class MainWindowViewModel : ViewModel
     {
-        private readonly IUserDialog _UserDialog;
-        private readonly IDataService _DataService;
+        private readonly IUserDialog _userDialog;
+        private readonly IDataService _dataService;
 
         #region Title : string - Заголовок окна
 
         /// <summary>Заголовок окна</summary>
-        private string _Title = "Главное окно";
+        private string? _title = "Главное окно";
 
         /// <summary>Заголовок окна</summary>
-        public string Title
+        public string? Title
         {
-            get => _Title;
-            set => Set(ref _Title, value);
+            get => _title;
+            set => Set(ref _title, value);
         }
 
         #endregion
@@ -25,21 +25,25 @@ namespace MVVMProject.ViewModels
         #region Status : string - Статус
 
         /// <summary>Статус</summary>
-        private string _Status = "Готов!";
+        private string? _status = "Готов!";
 
         /// <summary>Статус</summary>
-        public string Status
+        public string? Status
         {
-            get => _Status;
-            set => Set(ref _Status, value);
+            get => _status;
+            set => Set(ref _status, value);
         }
+
+        public IUserDialog UserDialog => _userDialog;
+
+        public IDataService DataService => _dataService;
 
         #endregion
 
-        public MainWindowViewModel(IUserDialog UserDialog, IDataService DataService)
+        public MainWindowViewModel(IUserDialog userDialog, IDataService dataService)
         {
-            _UserDialog = UserDialog;
-            _DataService = DataService;
+            _userDialog = userDialog;
+            _dataService = dataService;
         }
     }
 }

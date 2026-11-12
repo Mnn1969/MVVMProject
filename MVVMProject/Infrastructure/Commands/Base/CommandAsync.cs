@@ -4,15 +4,15 @@ namespace MVVMProject.Infrastructure.Commands.Base
 {
     internal abstract class CommandAsync : ICommand
     {
-        private bool _Executable = true;
+        private bool _executable = true;
 
         public bool Executable
         {
-            get => _Executable;
+            get => _executable;
             set
             {
-                if (_Executable == value) return;
-                _Executable = value;
+                if (_executable == value) return;
+                _executable = value;
                 ExecutableChanged?.Invoke(this, EventArgs.Empty);
                 CommandManager.InvalidateRequerySuggested();
             }
@@ -26,7 +26,7 @@ namespace MVVMProject.Infrastructure.Commands.Base
             remove => CommandManager.RequerySuggested -= value;
         }
 
-        bool ICommand.CanExecute(object? parameter) => _Executable && CanExecute(parameter);
+        bool ICommand.CanExecute(object? parameter) => _executable && CanExecute(parameter);
         
 
         async void ICommand.Execute(object? parameter)
